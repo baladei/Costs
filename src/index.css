@@ -1,4 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* serve para os inputs não ultrapassarem o valor da div  */
+  font-family: 'Open Sans', 'sans-serif'
+}
+
+html, body, #root {
+  background-color: #efefef;
+  height: 100%;
 }
