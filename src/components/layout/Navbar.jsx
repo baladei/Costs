@@ -21,10 +21,10 @@ export const Navbar = () => {
           <Link to='/projects'>Projects</Link>
           </li>
           <li className='item'>
-            <Link to='/contact'>Contact</Link>
+          <Link to='/company'>Company</Link>
           </li>
           <li className='item'>
-          <Link to='/company'>Company</Link>
+            <Link to='/contact'>Contact</Link>
           </li>
         </ul>
 
