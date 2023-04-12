@@ -1,11 +1,11 @@
-//import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { ProjectForm } from '../project/ProjectForm'
 import './NewProject.css'
 
 export const NewProject = () => {
 
-  //const history = useStory()
+  const navigateTo = useNavigate()
 
   function createPost(project) {
 
@@ -24,6 +24,7 @@ export const NewProject = () => {
     .then((data) => {
       console.log(data)
       //redirect
+      navigateTo('/projects', {message: 'Projeto criado com sucesso!'})
     })
     .catch(err => console.log(err))
     
