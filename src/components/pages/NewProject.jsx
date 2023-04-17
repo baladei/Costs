@@ -5,7 +5,7 @@ import './NewProject.css'
 
 export const NewProject = () => {
 
-  const navigateTo = useNavigate()
+  const navigate = useNavigate()
 
   function createPost(project) {
 
@@ -24,7 +24,7 @@ export const NewProject = () => {
     .then((data) => {
       console.log(data)
       //redirect
-      navigateTo('/projects', {message: 'Projeto criado com sucesso!'})
+      navigate('/projects', {state: {message: 'Projeto criado com sucesso!'}})
     })
     .catch(err => console.log(err))
     

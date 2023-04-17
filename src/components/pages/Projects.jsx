@@ -12,7 +12,7 @@ export const Projects = () => {
   return (
     <div>
       <h1>Meus Projetos</h1>
-      {message && <Message msg={message} type="sucess" />}
+      {message && <Message type="sucess" msg={message} />}
     </div>
   )
 }

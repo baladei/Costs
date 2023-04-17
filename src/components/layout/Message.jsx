@@ -14,7 +14,7 @@ export const Message = ({type, msg}) => {
 
         setVisible(true)
 
-        const timer = setTimeOut (() => {
+        const timer = setTimeout (() => {
             setVisible(false)
         }, 3000)
 
@@ -27,7 +27,6 @@ export const Message = ({type, msg}) => {
     {visible && (
         <div className={`message ${type}`}>{msg}</div>
     )}
-
     </>
     )
 }
