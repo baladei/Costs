@@ -41,10 +41,16 @@ export const Projects = () => {
       <LinkButton to="/newproject" text="Criar Projeto" />
       </div>
       {message && <Message type="sucess" msg={message} />}
-      <Container customClass='start'>
+      <Container customClass="start">
         {projects.length > 0 &&
         projects.map((project) => (
-          <ProjectCard name={project.name} key={project.name} />
+          <ProjectCard
+          id={project.id}
+          name={project.name}
+          key={project.id}
+          budget={project.budget}
+          category={project.category.name}
+          />
         ))}
       </Container>
     </div>

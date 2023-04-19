@@ -18,7 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
     <Navbar />
-    <Container>
+    <Container customClass="min-height">
     <Routes>
       <Route exact path='/' element={<Home />} />
       <Route exact path='/projects' element={<Projects />} />

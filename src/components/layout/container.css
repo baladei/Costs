@@ -1,6 +1,7 @@
 .container {
     width: 1200px;
     display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     flex-wrap: wrap; /* quando o elemento ultrapassar 1200px de width, irá para a proxima linha */
 }
