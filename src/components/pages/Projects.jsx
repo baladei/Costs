@@ -1,15 +1,19 @@
+import './Projects.css'
+
 import { useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+
 import { Message } from '../layout/Message'
 import { Container } from '../layout/Container'
 import { LinkButton } from '../layout/LinkButton'
 import { ProjectCard } from '../project/ProjectCard'
+import { Loading } from '../layout/Loading'
 
-import { useEffect, useState } from 'react'
-import './Projects.css'
 
 export const Projects = () => {
 
   const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const location = useLocation()
   let message = ''
@@ -19,6 +23,7 @@ export const Projects = () => {
 
   useEffect (() => {
 
+  setTimeout(() => {
     fetch('http://localhost:5200/projects', {
       method: 'GET',
       headers: {
@@ -29,10 +34,28 @@ export const Projects = () => {
     .then((data) => {
       console.log(data)
       setProjects(data)
+      setLoading(false)
     })
     .catch((err) => console.log(err))
-
+  }, 500)
   }, [])
+
+  function removeProject (id) {
+
+    fetch(`http://localhost:5200/projects/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      setProjects(projects.filter((project) => project.id !== id))
+      //message
+    })
+    .catch((err) => console.log(err))
+  }
+
 
   return (
     <div className='project_container'>
@@ -50,8 +73,13 @@ export const Projects = () => {
           key={project.id}
           budget={project.budget}
           category={project.category.name}
+          handleRemove={removeProject}
           />
         ))}
+        {loading && <Loading />}
+        {!loading && projects.length === 0 &&(
+          <p>Não há projetos cadastrados</p>
+        )}
       </Container>
     </div>
   )
