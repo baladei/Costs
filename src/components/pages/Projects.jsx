@@ -14,6 +14,7 @@ export const Projects = () => {
 
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
+  const [projectMessage, setProjetcMessage] = useState('')
 
   const location = useLocation()
   let message = ''
@@ -49,9 +50,9 @@ export const Projects = () => {
       },
     })
     .then((res) => res.json())
-    .then((data) => {
+    .then(() => {
       setProjects(projects.filter((project) => project.id !== id))
-      //message
+      setProjetcMessage('Projeto removido com sucesso!')
     })
     .catch((err) => console.log(err))
   }
@@ -64,6 +65,7 @@ export const Projects = () => {
       <LinkButton to="/newproject" text="Criar Projeto" />
       </div>
       {message && <Message type="sucess" msg={message} />}
+      {projectMessage && <Message type="sucess" msg={projectMessage} />}
       <Container customClass="start">
         {projects.length > 0 &&
         projects.map((project) => (

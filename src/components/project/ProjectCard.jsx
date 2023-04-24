@@ -21,7 +21,7 @@ export const ProjectCard = ({id, name, budget, category, handleRemove}) => {
         {/* para colorir a bolinha, transformo tudo em letra minuscula para achar na {category} */}
       </p>
       <div className='project_card_actions'>
-        <Link to='/'>
+        <Link to={`/project/${id}`}>
           <BsPencil /> Editar
         </Link>
         <button onClick={remove}>
