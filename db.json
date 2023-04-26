@@ -1,8 +1,8 @@
 {
   "projects": [
     {
-      "name": "Projeto teste",
-      "budget": "5000",
+      "name": "Projeto atualizado",
+      "budget": "23",
       "category": {
         "id": "3",
         "name": "Design"
@@ -24,14 +24,25 @@
     },
     {
       "name": "Projeto teste 3",
-      "budget": "2300",
+      "budget": "1900",
       "category": {
-        "id": "3",
-        "name": "Design"
+        "id": "1",
+        "name": "Infra"
       },
       "cost": 0,
       "services": [],
       "id": 3
+    },
+    {
+      "name": "Projeto teste 4",
+      "budget": "5000",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 4
     }
   ],
   "categories": [
