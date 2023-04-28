@@ -1,10 +1,12 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { parse, v4 as uuidv4 } from 'uuid'
 
 import { Loading } from '../layout/Loading'
 import { Container } from '../layout/Container'
 import { Message } from '../layout/Message'
 import { ProjectForm } from '../project/ProjectForm'
+import { ServiceForm } from '../service/ServiceForn'
 
 import './Project.css'
 
@@ -60,6 +62,16 @@ export const Project = () => {
       })
       .catch((err) => console.log(err))
     }
+
+    function createService (project) {
+      const lastService = project.services[project.services.lenght -1] //-1 serve para ir pro projeto atual, ou seja, o último
+
+      lastService.id = uuidv4()
+
+      const lastServiceCost = lastService.cost
+      const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
+
+    }
     
     function toggleProjectForm () {
       setShowProjectForm(!showProjectForm)
@@ -68,6 +80,8 @@ export const Project = () => {
     function toggleServiceForm () {
       setShowServiceForm(!showServiceForm)
     }
+
+    console.log(project)
 
 
   return (
@@ -105,9 +119,13 @@ export const Project = () => {
             {!showServiceForm ? 'Adicionar serviço' : 'Salvar'}
           </button>
           <div className="project_info">
-            {showServiceForm && <div>formulário de serviço</div>
-
-            }
+            {showServiceForm && (
+              <ServiceForm
+                handleSubmit={createService}
+                btnText="Adicionar Serviço"
+                projectData={project}
+              />
+            )}
           </div>
         </div>
         <h2> Serviços</h2>
