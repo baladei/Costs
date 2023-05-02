@@ -1,10 +1,11 @@
+import { useState } from 'react'
 import { Input } from '../form/Input'
 import { Submit } from '../form/Submit'
 import '../project/ProjectForm.css'
 
 export const ServiceForm = ({ handleSubmit, btnText, projectData }) => {
 
- // const [service, setService] = useState({})
+ const [service, setService] = useState({})
 
   function submit (e) {
     e.preventDefault()
@@ -13,7 +14,7 @@ export const ServiceForm = ({ handleSubmit, btnText, projectData }) => {
 
   }
 
-  function handleChange () {
+  function handleChange (e) {
     setService({...service, [e.target.name]: e.target.value})
 
   }

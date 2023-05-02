@@ -7,8 +7,27 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 16,
+      "services": [
+        {
+          "name": "sdashjdsagj",
+          "cost": "13",
+          "description": "asdasda",
+          "id": "14784e82-dd1b-4188-a6a2-dc6069880b99"
+        },
+        {
+          "name": "sdashjdsagjdasdas",
+          "cost": "1",
+          "description": "asdasdadsaadas",
+          "id": "1027e807-55b4-45c0-8f9e-8d839f8e34aa"
+        },
+        {
+          "name": "sdashjdsagjdasdas1",
+          "cost": "2",
+          "description": "asdasdadsaadas",
+          "id": "cc8211dd-1456-42d0-96a0-1aa1354263c4"
+        }
+      ],
       "id": 1
     },
     {
@@ -30,7 +49,14 @@
         "name": "Infra"
       },
       "cost": 0,
-      "services": [],
+      "services": [
+        {
+          "name": "dsada",
+          "cost": "11",
+          "description": "adsadsa",
+          "id": "ff19adf2-85af-49a5-b25d-833c9d4167b2"
+        }
+      ],
       "id": 3
     },
     {

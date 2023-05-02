@@ -16,8 +16,8 @@ export const Project = () => {
     const [project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(false)
     const [showServiceForm, setShowServiceForm] = useState(false)
-    const [message, setMessage] = useState()
-    const [type, setType] = useState()
+    const [message, setMessage] = useState('')
+    const [type, setType] = useState('sucess')
 
     useEffect(() => {
 
@@ -55,23 +55,52 @@ export const Project = () => {
       .then((res) => res.json())
       .then((data) => {
         setProject(data)
-        setShowProjectForm(false)
+        setShowProjectForm(!setShowProjectForm) //or(false)
         setMessage('Projeto atualizado!')
         setType('sucess')
-        return false
       })
       .catch((err) => console.log(err))
     }
 
     function createService (project) {
-      const lastService = project.services[project.services.lenght -1] //-1 serve para ir pro projeto atual, ou seja, o último
+      const lastService = project.services[project.services.length -1] //-1 serve para ir pro projeto atual, ou seja, o último
 
-      lastService.id = uuidv4()
+      lastService.id = uuidv4();
 
       const lastServiceCost = lastService.cost
+      
       const newCost = parseFloat(project.cost) + parseFloat(lastServiceCost)
 
+      //maximum value validation
+
+      if(newCost > parseFloat(project.budget)) {
+      setMessage('Orçamento ultrapassado, verifique o valor do serviço')
+      setType('error')
+      setTimeout(() => {setMessage('')}, 3000);
+      project.services.pop()
+      return false
     }
+
+    //add service cost to project total cost
+
+    project.cost = newCost
+
+    //update project
+
+    fetch(`http://localhost:5200/projects/${project.id}`, {
+      method:'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(project)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        //exibir serviços
+        console.log(data)
+      })
+      .catch((err) => console.log(err))
+    }     
     
     function toggleProjectForm () {
       setShowProjectForm(!showProjectForm)
@@ -80,8 +109,9 @@ export const Project = () => {
     function toggleServiceForm () {
       setShowServiceForm(!showServiceForm)
     }
+  
 
-    console.log(project)
+  
 
 
   return (
