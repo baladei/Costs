@@ -7,25 +7,19 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 16,
+      "cost": 3,
       "services": [
         {
-          "name": "sdashjdsagj",
-          "cost": "13",
-          "description": "asdasda",
-          "id": "14784e82-dd1b-4188-a6a2-dc6069880b99"
-        },
-        {
-          "name": "sdashjdsagjdasdas",
-          "cost": "1",
-          "description": "asdasdadsaadas",
-          "id": "1027e807-55b4-45c0-8f9e-8d839f8e34aa"
-        },
-        {
-          "name": "sdashjdsagjdasdas1",
+          "name": "Teste 1",
           "cost": "2",
-          "description": "asdasdadsaadas",
-          "id": "cc8211dd-1456-42d0-96a0-1aa1354263c4"
+          "description": "Testando",
+          "id": "eb53b47b-e0aa-4084-b657-9015b8f69bd7"
+        },
+        {
+          "name": "Teste 2",
+          "cost": "1",
+          "description": "testando",
+          "id": "7e4681ca-476a-4572-b43c-ece376e653e1"
         }
       ],
       "id": 1
@@ -37,37 +31,69 @@
         "id": "4",
         "name": "Planejamento"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 1120,
+      "services": [
+        {
+          "name": "Teste 1",
+          "cost": "1000",
+          "description": "testando",
+          "id": "9e3e0cc1-de5e-49e5-9c4e-89794cd306df"
+        },
+        {
+          "name": "Teste 2",
+          "cost": "120",
+          "description": "testando",
+          "id": "db15ad62-84cd-4d92-82d8-6dd8220bb8a4"
+        }
+      ],
       "id": 2
     },
     {
-      "name": "Projeto teste 3",
-      "budget": "1900",
+      "name": "Projeto Teste 3",
+      "budget": "30000",
       "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
-      "cost": 0,
+      "cost": 229,
       "services": [
         {
-          "name": "dsada",
-          "cost": "11",
-          "description": "adsadsa",
-          "id": "ff19adf2-85af-49a5-b25d-833c9d4167b2"
+          "name": "Teste",
+          "cost": "200",
+          "description": "Testando",
+          "id": "d6e19964-6623-446e-98d8-b9b35423d2c6"
+        },
+        {
+          "name": "testando 2",
+          "cost": "29",
+          "description": "teste",
+          "id": "3514e86c-0a7e-4620-bec2-b62d07e52994"
         }
       ],
       "id": 3
     },
     {
       "name": "Projeto teste 4",
-      "budget": "5000",
+      "budget": "2000",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "1",
+        "name": "Infra"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 1431,
+      "services": [
+        {
+          "name": "testando",
+          "cost": "200",
+          "description": "sdasdas",
+          "id": "b31ca3c0-e5d2-47b7-91d7-6cd581e31ecd"
+        },
+        {
+          "name": "deu certo",
+          "cost": "1231",
+          "description": "sdasdas",
+          "id": "f685b86d-a585-4823-8354-7f5a2ff0e9cc"
+        }
+      ],
       "id": 4
     }
   ],
